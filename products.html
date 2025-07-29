@@ -1,0 +1,66 @@
+<!-- Developed by Seif/Geom © 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Café Name</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="<!-- logo-image-path -->" alt="Café Logo">
+        <span>Seif / Geom Café</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Menu</h1>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="<!-- product.jpg -->" alt="Product Name">
+        <h2>Product Name</h2>
+        <p class="price">$XX.XX</p>
+        <button class="btn">Order Now</button>
+      </div>
+      <!-- Repeat product cards -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-info">
+      <p>Seif / Geom Café</p>
+      <p>123 Coffee St., Cairo, Egypt</p>
+      <p>Phone: +20 123 456 789</p>
+    </div>
+    <div class="footer-social">
+      <a href="<!-- facebook-link -->"><img src="<!-- fb-icon.png -->" alt="Facebook"></a>
+      <a href="<!-- instagram-link -->"><img src="<!-- insta-icon.png -->" alt="Instagram"></a>
+      <a href="<!-- twitter-link -->"><img src="<!-- tw-icon.png -->" alt="Twitter"></a>
+    </div>
+    <p>&copy; 2025 Seif / Geom</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => links.classList.toggle('show'));
+  </script>
+</body>
+</html>
