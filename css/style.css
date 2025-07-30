@@ -1,7 +1,4 @@
 /* === Google Fonts Settings === */
-/* Body uses Open Sans, headings use Lora */
-
-
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
@@ -29,6 +26,7 @@ h1, h2, h3, blockquote {
   align-items: center;
   background: rgba(255,255,255,0.9);
   padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 .nav-links {
   list-style: none;
@@ -50,10 +48,6 @@ h1, h2, h3, blockquote {
 .nav-links .active {
   border-bottom: 2px solid #3882f6;
 }
-/* Mobile menu hidden by default */
-.nav-links.show {
-  display: block;
-}
 .nav-toggle {
   display: none;
   background: none;
@@ -64,33 +58,6 @@ h1, h2, h3, blockquote {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.5;
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-.hero p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero {
   background-color: rgba(25, 25, 112, 0.9); 
   color: white;
   padding: 6rem 5rem;
@@ -99,7 +66,6 @@ h1, h2, h3, blockquote {
   flex-direction: column;
   align-items: center;
 }
-
 .hero-wrapper {
   display: flex;
   align-items: center;
@@ -107,23 +73,28 @@ h1, h2, h3, blockquote {
   gap: 2rem;
   flex-wrap: wrap;
 }
-
 .hero-content {
   flex: 1 1 45%;
   text-align: left;
   z-index: 1;
 }
-
 .hero-image {
   flex: 1 1 45%;
   display: flex;
   justify-content: center;
 }
-
 .hero-img {
   max-width: 80%;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Button */
@@ -153,11 +124,9 @@ h1, h2, h3, blockquote {
   gap: 2rem;
   margin-top: 2rem;
 }
-
-/* Horizontal layout for preview items */
 .preview-item {
   display: flex;
-  flex-direction: row; /* image on the left now */
+  flex-direction: row;
   align-items: center;
   gap: 1.5rem;
   text-align: left;
@@ -166,7 +135,6 @@ h1, h2, h3, blockquote {
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-/* Image on the left */
 .preview-item img {
   width: 370px;
   height: 260px;
@@ -174,11 +142,9 @@ h1, h2, h3, blockquote {
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
-/* Hover effect */
 .preview-item img:hover {
   transform: scale(1.05);
 }
-/* Text on the right */
 .preview-item h3 {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -187,6 +153,7 @@ h1, h2, h3, blockquote {
   margin: 0;
   flex: 1;
 }
+
 /* Quote Section */
 .quote {
   padding: 2rem 2rem;
@@ -206,8 +173,7 @@ h1, h2, h3, blockquote {
   background: #1f2937;
   color: #fff;
   text-align: center;
-padding-bottom: 0;
-  
+  padding-bottom: 0;
 }
 .banner-cta .btn {
   background: #fff;
@@ -243,11 +209,9 @@ padding-bottom: 0;
   margin: 0.5rem 0;
   font-weight: bold;
 }
-
 .fix-button .btn {
   margin-top: 2rem; 
 }
-
 main h1 {
   text-align: center;
   margin-bottom: 1rem;
@@ -262,7 +226,6 @@ main h1 {
   margin-top: 2rem;
   font-style: italic;
 }
-
 .story h2 {
   text-align: center;
   font-size: 1.6rem;
@@ -292,7 +255,6 @@ main h1 {
   width: 150px;
   align-self: flex-start;
 }
-
 .contact-page p {
   margin-bottom: 3rem;
   font-size: 1rem;
@@ -317,7 +279,20 @@ footer {
   opacity: 0.7;
 }
 
-/* Responsive Media Queries */
+/* Logo */
+.logo-img {
+  height: 50px; 
+  width: auto;  
+  vertical-align: middle;
+  margin-right: 1rem; 
+}
+@media screen and (max-width: 600px) {
+  .logo-img {
+    height: 40px;
+  }
+}
+
+/* === Responsive Media Queries === */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
@@ -325,41 +300,51 @@ footer {
   .hero p {
     font-size: 1rem;
   }
+
+ .nav-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* When screen is small */
+@media (max-width: 768px) {
   .nav-toggle {
     display: block;
+    order: 2;
   }
+
   .nav-links {
     display: none;
     flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   }
+
+  #nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
   .nav-links li {
     margin: 1rem 0;
   }
 }
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
 
-.logo-img {
-  height: 50px; 
-  width: auto;  
-  vertical-align: middle;
-  margin-right: 1rem; 
-}
-
-@media screen and (max-width: 600px) {
-  .logo-img {
-    height: 40px;
+  .nav-links.show {
+    display: flex;
   }
-}
 
-@media (max-width: 768px) {
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
   .hero-wrapper {
     flex-direction: column;
     text-align: center;
@@ -373,14 +358,77 @@ footer {
   .hero-content {
     text-align: center;
   }
+
+  .preview-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .preview-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .preview-item h3 {
+    text-align: center;
+  }
+
+  .product-card img {
+    height: auto;
+  }
+
+  .product-card {
+    padding: 1rem 0.5rem;
+  }
+
+  .product-card h2 {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+  }
+
+  .about,
+  .contact-page {
+    padding: 2rem 1rem;
+  }
+
+  .story h2 {
+    font-size: 1.3rem;
+  }
+
+  .contact-page p,
+  .about p {
+    font-size: 1rem;
+    text-align: left;
+  }
 }
 
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
 
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
 
+  .footer-social img {
+    width: 25px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* Background Gradient */
 body {
-  position: relative; /* Needed to anchor the pseudo-element */
+  position: relative;
 }
-
 body::before {
   content: "";
   position: absolute;

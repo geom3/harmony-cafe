@@ -15,20 +15,26 @@
 <body>
   <!-- Header -->
   <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="assets/images/cafe-logo.png" alt="Café Logo" class="logo-img">
-        <span>HARMONY</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/images/cafe-logo.png" alt="Café Logo" class="logo-img">
+      <span>HARMONY</span>
+    </div>
+
+    <!-- Hidden checkbox toggle -->
+    <input type="checkbox" id="nav-toggle" hidden>
+
+    <!-- Label for the toggle -->
+    <label for="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</label>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main class="contact-page">
     <h1>Contact Us</h1>
