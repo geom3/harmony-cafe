@@ -235,10 +235,16 @@ padding-bottom: 0;
 .product-card img {
   width: 100%;
   border-radius: 4px;
+  height: 30vw; 
+  object-fit: cover;
 }
 .product-card .price {
   margin: 0.5rem 0;
   font-weight: bold;
+}
+
+.fix-button .btn {
+  margin-top: 2rem; 
 }
 
 /* About Page */
